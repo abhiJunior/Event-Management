@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 
 function EventManagement() {
+
+  const url = "http://localhost:5000"
   // ---------- STYLES ----------
   const pageStyle = {
     fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
@@ -589,7 +591,7 @@ function EventManagement() {
   // Fetch profiles from backend
   const fetchProfile = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/profiles/", {
+      const response = await fetch(`${url}/api/profiles/`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json"
@@ -615,7 +617,7 @@ function EventManagement() {
 
     setLoading(true);
     try {
-      const response = await fetch(`http://localhost:5000/api/events/profile?profileId=${profileId}`);
+      const response = await fetch(`${url}/api/events/profile?profileId=${profileId}`);
       if (response.ok) {
         const eventsData = await response.json();
         setEvents(eventsData);
@@ -636,7 +638,7 @@ function EventManagement() {
     if (!name) return;
     
     try {
-      const response = await fetch("http://localhost:5000/api/profiles/", {
+      const response = await fetch(`${url}/api/profiles/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -1031,7 +1033,7 @@ function EventManagement() {
     console.log("Updating event data:", eventData);
 
     try {
-      const response = await fetch(`http://localhost:5000/api/events/${editingEvent._id}`, {
+      const response = await fetch(`${url}/api/events/${editingEvent._id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -1101,7 +1103,7 @@ function EventManagement() {
     console.log("Sending event data:", eventData);
 
     try {
-      const response = await fetch("http://localhost:5000/api/events/", {
+      const response = await fetch(`${url}/api/events/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -1,4 +1,4 @@
-import Event from "../model/event.js";
+import Event from "../model/Event.js";
 import mongoose from "mongoose";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc.js";

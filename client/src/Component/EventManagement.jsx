@@ -3,7 +3,7 @@ import { useEffect } from "react";
 
 function EventManagement() {
 
-  const url = "http://localhost:5000"
+  const url = "https://event-management-backend-kgmb.onrender.com"
   // ---------- STYLES ----------
   const pageStyle = {
     fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
